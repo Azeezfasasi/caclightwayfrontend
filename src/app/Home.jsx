@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet'
 import AllBlog from '../assets/component/HomeComponents.jsx/AllBlog'
 import ContactForm from '../assets/component/HomeComponents.jsx/ContactForm'
 import Footer from '../assets/component/HomeComponents.jsx/Footer'
@@ -14,6 +15,9 @@ import Worship from '../assets/component/HomeComponents.jsx/Worship'
 function Home() {
   return (
     <>
+      <Helmet>
+        <title>CAC Lightway Assembly Church</title>
+      </Helmet>
       <Header />
       <Hero />
       <HomeAbout />

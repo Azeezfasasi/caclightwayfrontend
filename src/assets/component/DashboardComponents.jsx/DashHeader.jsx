@@ -12,6 +12,7 @@ import GridIcon from '@rsuite/icons/Grid';
 import TagIcon from '@rsuite/icons/Tag';
 import MessageIcon from '@rsuite/icons/Message';
 import GearIcon from '@rsuite/icons/Gear';
+import caclogo2 from '../../images/caclogo2.png'
 
 function DashHeader() {
   const {currentUser, isMember, isPastor, isAdmin} = useProfile();
@@ -66,20 +67,20 @@ function DashHeader() {
   const activeKey = menuKeyByPath[location.pathname];
 
   return (
-    <nav className="bg-gray-500 text-white py-4 px-3 font-inter sticky top-0 z-50">
+    <nav className="bg-gray-500 text-white px-3 font-inter sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center py-2">
         {/* Logo */}
         <Link to="/" className="flex items-center">
           {/* Using a placeholder image or simple text for the logo */}
           <img
-            src="https://placehold.co/40x40/CCCCCC/000000?text=Logo"
-            alt="Adesola Plastic Stores Logo"
-            className="h-10 w-10 rounded-full mr-2"
+            src={caclogo2}
+            alt="Logo"
+            className="h-13 w-14 rounded-full mr-0"
           />
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-6 text-lg">
+        <div className="hidden lg:flex items-center space-x-6 text-lg">
           <Link to="/" className="hover:text-orange-400 transition-colors duration-300">Home</Link>
           <Link to="/app/about" className="hover:text-orange-400 transition-colors duration-300">About Us</Link>
           <Link to="/app/prayerrequest" className="hover:text-orange-400 transition-colors duration-300">Prayer Requests</Link>
@@ -89,7 +90,7 @@ function DashHeader() {
         </div>
 
         {/* Icons for Desktop (User, Wishlist, Cart) */}
-        <div className="hidden md:flex items-center space-x-4" ref={menuRef}>
+        <div className="hidden lg:flex items-center space-x-4" ref={menuRef}>
             <button onClick={() => setOpenDropdown(!openDropdown)} className="hover:text-orange-400 transition-colors flex flex-row justify-start items-center gap-2 duration-300 cursor-pointer">
                 <img 
                 src={account} 
@@ -131,15 +132,18 @@ function DashHeader() {
       )}
 
         {/* Hamburger Menu for Mobile */}
-        <div className="md:hidden flex items-center">
+        <div className="lg:hidden flex items-center" ref={menuRef}>
           {/* Mobile Icons (User, Cart) */}
-          <Link to="/app/dashboard" className="hover:text-orange-400 transition-colors flex flex-row justify-start items-center gap-2 duration-300 mr-2">
-                <img 
-                src={account} 
-                alt={account} 
-                className='w-7 h-7 text-blue-500' 
-                />
-                <div className='mr-4'>John Doe</div>
+          <Link to="/app/dashboard" onClick={() => setOpenDropdown(!openDropdown)} className="hover:text-orange-400 transition-colors flex flex-row justify-start items-center gap-2 duration-300 mr-2">
+            <img 
+            src={account} 
+            alt={account} 
+            className='w-7 h-7 text-blue-500' 
+            />
+            <div className='mr-4 flex flex-col items-start justify-center'>
+                <div className='text-[14px]'>{currentUser.name}</div>
+                <div className='text-[12px] capitalize'>{currentUser.role}</div>
+            </div>
           </Link>
           
 
@@ -173,7 +177,7 @@ function DashHeader() {
 
       {/* Mobile Menu (conditionally rendered) */}
       <div
-        className={`md:hidden ${
+        className={`lg:hidden ${
           isOpen ? 'block' : 'hidden'
         } py-2 px-0 transition-all duration-300 ease-in-out`}
       >

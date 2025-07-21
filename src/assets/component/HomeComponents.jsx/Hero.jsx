@@ -23,7 +23,7 @@ function Hero() {
           </p>
 
           {/* Call to Action Button */}
-          <Link to="/register" className="w-fit px-8 py-4 bg-orange-500 text-black font-semibold rounded-lg shadow-lg hover:bg-orange-600 transition duration-300 ease-in-out transform hover:-translate-y-1">
+          <Link to="/app/dashboard" className="w-fit px-8 py-4 bg-orange-500 text-black font-semibold rounded-lg shadow-lg hover:bg-orange-600 transition duration-300 ease-in-out transform hover:-translate-y-1">
             GET STARTED
           </Link>
 

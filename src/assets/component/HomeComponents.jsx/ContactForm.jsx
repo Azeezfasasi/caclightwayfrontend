@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
 import { API_BASE_URL } from '../../../config/Api'; 
+import { Link } from 'react-router-dom';
 
 function ContactForm() {
   // Form states
@@ -116,12 +117,7 @@ function ContactForm() {
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
                 className="w-full px-5 py-4 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-800 placeholder-gray-500"
-                // Not required as per your model
               />
-              {/* NOTE: The original placeholder "Query Related" was ambiguous.
-                 If this field is truly meant for a "Subject" or "Query Type",
-                 you would need to add a 'subject' field to your backend's ContactForm model
-                 and update the controller accordingly. For now, it maps to phoneNumber. */}
             </div>
             <div>
               <textarea
@@ -155,15 +151,18 @@ function ContactForm() {
           <div className="mb-8">
             <h3 className="text-base font-semibold text-gray-900 mb-2 uppercase">Address</h3>
             <p className="text-gray-700 text-lg font-bold">
-              NH 234 PUBLIC SQUARE <br /> SAN FRANCISCO 65368
+              23 Kajola Olayinka Street, Off Ogunlewe Road <br /> Igbogbo, Ikorodu, Lagos.
             </p>
           </div>
 
-          <div className="mb-8">
+          <div className="flex flex-col mb-8">
             <h3 className="text-base font-semibold text-gray-900 mb-2 uppercase">Contact Details</h3>
-            <p className="text-gray-700 text-lg font-bold">
-              (480) 555-0103 <br /> FINSWEET@EXAMPLE.COM
-            </p>
+            <Link to="tel:08069374005" className="text-gray-700 text-lg font-bold w-fit">
+              (+234) 08069374005
+            </Link>
+            <Link to="mailto:info@caclightway.com" className="text-gray-700 text-lg font-bold w-fit">
+              info@caclightway.com
+            </Link>
           </div>
 
           <div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import SubscribeNow from './SubscribeNow';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -11,20 +12,20 @@ function Footer() {
           <div className="text-[17px] font-bold text-white mb-4">
             CAC Ligtway Assembly
           </div>
-          <p className="text-sm mb-2">© COPYRIGHT FINSWEEET 2022</p>
-          <p className="text-sm">(480) 555-0103</p>
-          <p className="text-sm">4517 WASHINGTON AVE</p>
-          <p className="text-sm">FINSWEET@EXAMPLE.COM</p>
+          {/* <p className="text-sm mb-2">© COPYRIGHT FINSWEEET 2022</p> */}
+          <p className="text-sm">(+234) 08069374005</p>
+          <p className="text-sm">23 Kajola Olayinka Street, Off Ogunlewe Road Igbogbo, Ikorodu, Lagos.</p>
         </div>
 
         {/* Column 2: Quicklinks */}
         <div className="text-left">
           <h3 className="text-lg font-semibold text-white mb-4">Quicklinks</h3>
           <ul className="space-y-2">
-            <li><a href="#" className="hover:text-orange-400 transition-colors duration-200">ABOUT US</a></li>
-            <li><a href="#" className="hover:text-orange-400 transition-colors duration-200">SERMONS</a></li>
-            <li><a href="#" className="hover:text-orange-400 transition-colors duration-200">EVENTS</a></li>
-            <li><a href="#" className="hover:text-orange-400 transition-colors duration-200">BLOG</a></li>
+            <li><Link to="/" className="hover:text-orange-400 transition-colors duration-200">Home</Link></li>
+            <li><Link to="/app/about" className="hover:text-orange-400 transition-colors duration-200">ABOUT US</Link></li>
+            <li><Link to="/app/prayerrequest" className="hover:text-orange-400 transition-colors duration-200">PRAYER REQUEST</Link></li>
+            <li><Link to="/app/blog" className="hover:text-orange-400 transition-colors duration-200">BLOG</Link></li>
+            <li><Link to="/app/contactus" className="hover:text-orange-400 transition-colors duration-200">CONTACT US</Link></li>
           </ul>
         </div>
 

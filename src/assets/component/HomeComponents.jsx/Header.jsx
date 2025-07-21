@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import donate2 from '../../images/donate2.svg';
 import account from '../../images/account.svg';
+import caclogo2 from '../../images/caclogo2.png';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,21 +12,21 @@ function Header() {
   };
 
   return (
-    <nav className="bg-gray-500 text-white p-4 font-inter sticky top-0 z-50">
+    <nav className="bg-gray-500 text-white px-4 font-inter sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center py-2">
         {/* Logo */}
         <div className="flex items-center">
           {/* Using a placeholder image or simple text for the logo */}
           <img
-            src="https://placehold.co/40x40/CCCCCC/000000?text=Logo"
+            src={caclogo2}
             alt="Adesola Plastic Stores Logo"
-            className="h-10 w-10 rounded-full mr-2"
+            className="h-13 w-14 rounded-full mr-0"
           />
-          <span className="text-xl font-bold">CAC Lightway Assembly</span>
+          <span className="text-[15px] md:text-[18px] lg:text-[20px] font-bold">CAC Lightway Assembly</span>
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-6 text-lg">
+        <div className="hidden lg:flex items-center space-x-6 text-lg">
           <Link to="/" className="hover:text-orange-400 transition-colors duration-300">Home</Link>
           <Link to="/app/about" className="hover:text-orange-400 transition-colors duration-300">About Us</Link>
           <Link to="/app/prayerrequest" className="hover:text-orange-400 transition-colors duration-300">Prayer Requests</Link>
@@ -35,7 +36,7 @@ function Header() {
         </div>
 
         {/* Icons for Desktop (User, Wishlist, Cart) */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden lg:flex items-center space-x-4">
             <Link to="/app/dashboard" className="hover:text-orange-400 transition-colors duration-300">
                 <img 
                 src={account} 
@@ -54,7 +55,7 @@ function Header() {
         </div>
 
         {/* Hamburger Menu for Mobile */}
-        <div className="md:hidden flex items-center">
+        <div className="lg:hidden flex items-center">
           {/* Mobile Icons (User, Cart) */}
           <Link to="/login" className="hover:text-orange-400 transition-colors duration-300 mr-5">
                 <img 
@@ -70,6 +71,7 @@ function Header() {
                 className='w-7 h-7 text-blue-500' 
                 />
           </Link>
+          <Link to="/app/worshipwithus" className="bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition-colors duration-300 hidden md:block lg:hidden mr-5">Worship With Us</Link>
 
           <button onClick={toggleMenu} className="focus:outline-none">
             <svg
@@ -101,7 +103,7 @@ function Header() {
 
       {/* Mobile Menu (conditionally rendered) */}
       <div
-        className={`md:hidden ${
+        className={`lg:hidden ${
           isOpen ? 'block' : 'hidden'
         } bg-black py-2 px-4 transition-all duration-300 ease-in-out`}
       >
