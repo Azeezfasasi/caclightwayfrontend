@@ -10,6 +10,7 @@ import TagIcon from '@rsuite/icons/Tag';
 import MessageIcon from '@rsuite/icons/Message';
 import GearIcon from '@rsuite/icons/Gear';
 import { useProfile } from '../../context-api/ProfileContext';
+import LogoutButton from './LogoutButton';
 
 function DashMenu() {
     const {isMember, isPastor, isAdmin} = useProfile()
@@ -136,6 +137,7 @@ function DashMenu() {
                         Settings
                     </Nav.Item>
                     )}
+                    <LogoutButton />
                 </Nav>
             </Sidenav.Body>
         </Sidenav>
